@@ -13,7 +13,7 @@ jobs:
           docker login --username Spectre7651 --password ${{ secrets.GHCR_TOKEN }} ghcr.io
       - name: Build Image
         run: |
-          docker build . --tag ghcr.io/Spectre7651/blueprint-cloudforest:latest
+          docker build . --tag ghcr.io/spectre7651/blueprint-cloudforest:latest
       - name: Push to GCHR
         run: |
-          docker push ghcr.io/Spectre7651/blueprint-cloudforest:latest
+          docker push ghcr.io/spectre7651/blueprint-cloudforest:latest
