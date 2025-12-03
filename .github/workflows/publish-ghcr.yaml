@@ -1,0 +1,19 @@
+name: Docker Image CI for GHCR
+
+on: 
+  push
+
+jobs:
+  build_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Login to GHCR
+        run: |
+          docker login --username Spectre7651 --password: ${{ secrets.GHCR_TOKEN}} gchr.io
+      - name: Build Image
+        run: |
+          docker build . --tag gchr.io/Spectre7651/blueprint-cloudforest:latest
+      - name: Push to GCHR
+        run: |
+          docker push gchr.io/Spectre7651/blueprint-cloudforest:latest
