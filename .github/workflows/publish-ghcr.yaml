@@ -1,7 +1,9 @@
 name: Docker Image CI for GHCR
 
 on: 
-  push
+  push:
+      paths-ignore:
+      - 'README.md'
 
 jobs:
   build_publish:
@@ -17,3 +19,8 @@ jobs:
       - name: Push to GCHR
         run: |
           docker push ghcr.io/spectre7651/blueprint-cloudforest:latest
+      - name: Send a discord note
+        uses: appleboy/discord-action@v1.2.0
+        with:
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          message: Hey, ${{ github.event_name }} was run!
