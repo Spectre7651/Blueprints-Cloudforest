@@ -23,4 +23,4 @@ jobs:
         uses: appleboy/discord-action@v1.2.0
         with:
           webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          message: Hey, ${{ github.action }} suceeded in ${{ github.repository}}
+          message: Hey DockerCI succeeded in ${{ github.repository}}
