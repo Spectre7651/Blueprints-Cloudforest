@@ -14,20 +14,20 @@ timezone: Europe/London
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Cloudforest Cyber # the main title
+title: Blueprints # the main title
 
 tagline: |
-  Consulting
-  Security
-  Hosting
+  Cyber
+  Homelab
+  Documentation
  # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  The Cloudforest Cyber Blog Site
+  A Blueprint/Blog site
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: "https://blog.cloudforestcyber.co.uk"
+url: "https://blueprints.cloudforestcyber.co.uk"
 
 github:
   username: Spectre7651 # change to your GitHub username
@@ -73,7 +73,7 @@ analytics:
     id: # fill in your Matomo ID
     domain: # fill in your Matomo domain
   cloudflare:
-    id: # fill in your Cloudflare Web Analytics token
+    id: 54827cdbffb944aba4d334bdb3f9215a
   fathom:
     id: # fill in your Fathom Site ID
 
