@@ -7,7 +7,7 @@ on:
 
 jobs:
   build_publish:
-    runs-on: ubuntu-22.04-arm
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
       - name: Login to GHCR
@@ -15,7 +15,7 @@ jobs:
           docker login --username Spectre7651 --password ${{ secrets.GHCR_TOKEN }} ghcr.io
       - name: Build Image
         run: |
-          docker build . --tag ghcr.io/spectre7651/blueprint-cloudforest:latest --platform linux/arm64
+          docker build . --tag ghcr.io/spectre7651/blueprint-cloudforest:latest
       - name: Push to GCHR
         run: |
           docker push ghcr.io/spectre7651/blueprint-cloudforest:latest
