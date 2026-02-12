@@ -24,7 +24,7 @@ So, I used Ansible to pull sync and push the changes bidirectionally between the
 ### The Playbook
 This playbook installs, sets-up and executes the sync using unison.
 
-``` YAML
+```yaml
   vars:
     repo_dirs:
       - /example/myRepo
@@ -33,7 +33,7 @@ This playbook installs, sets-up and executes the sync using unison.
 ```
 This vars section sets the repo vars for what directories need to be synced and they should be entered in the format myRepo then proxyRepo so in this example ```/example/myRepo``` will be synced with ```/example/proxyRepo``` and vice versa.
 
-``` YAML
+```yaml
  tasks:
   - name: Ensure Unison is installed
     ansible.builtin.apt:
@@ -49,7 +49,7 @@ This next bit ensures that Unison is installed and its config directory exists.
 > This will be updated to support other package managers at some point!
 {: .prompt-info }
 
-``` YAML
+```yaml
   - name: Ensure sync files are in place
     ansible.builtin.template:
       src: "{{ item.src }}"
@@ -72,7 +72,7 @@ prefer = newer
 ```
 This code in the ```examplesync.prf.j2``` file sets up the sync parameters and sets it up for git and automatic transfer - perfect for ansible
 
-``` YAML
+```yaml
   - name: (Git) Stash local changes
     ansible.builtin.shell: git stash
     args:
@@ -121,6 +121,7 @@ This last part is where the magic happens. Unison syncs the two GitHub repos pre
 
 ### Now to sync the two remotes I simply run
 ``` ansible-playbook -i inventory main.yaml```
+
 And after about 10 seconds they are perfectly in sync.
 ### Results
 
